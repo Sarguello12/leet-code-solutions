@@ -53,3 +53,20 @@ const romanToInt = function(s) {
     }
     return number;
 };
+
+// Write a function to find the longest common prefix string amongst an array of strings. If there is no common prefix, return an empty string "".
+// Input: strs = ["flower","flow","flight"]
+// Output: "fl"
+
+const longestCommonPrefix = function(strs) {
+    if(strs.length === 0){
+        return "";
+    }
+    let commonPre = strs[0];
+    for(let i = 0; i < strs.length; i++){
+        while(strs[i].indexOf(commonPre) !== 0){
+            commonPre = commonPre.slice(0, -1);
+        }
+    }
+    return commonPre;
+};
